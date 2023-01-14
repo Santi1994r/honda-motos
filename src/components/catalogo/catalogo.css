@@ -1,0 +1,32 @@
+.containerMotos {
+    display: flex;
+    justify-content: center;
+}
+
+.moto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid red;
+    margin: .5rem;
+    
+
+}
+
+.moto img {
+    width: 25rem;
+}
+
+.moto button {
+    margin-bottom: .5rem;
+    border-radius: .3rem;
+    border: 2px solid red;
+    padding: .5rem;
+    background-color: red;
+    color: #fff;
+}
+
+.moto button:hover {
+    background-color: #fff;
+    color: red;
+}

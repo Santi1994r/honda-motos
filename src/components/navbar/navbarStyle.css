@@ -1,0 +1,46 @@
+
+
+.navBarMotos {
+    height: 4rem;
+}
+
+.containerLogo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logoHonda {
+    width: 9rem;
+    display: flex;
+    align-self: center;
+}
+
+.logoRedes {
+    width: 2rem;
+    margin-right: .8rem;
+}
+
+.cart {
+    width: 2rem;
+    margin-left: 1.5rem;
+}
+
+.contador {
+    padding: .3rem;
+}
+
+.btnCart {
+    border: none;
+}
+
+.navlink {
+    text-decoration: none;
+    color: #000;
+    padding: .8rem;
+}
+
+.navlink:hover {
+    color: red;
+    padding: .8rem;
+}
