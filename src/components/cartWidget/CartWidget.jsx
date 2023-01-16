@@ -1,14 +1,27 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { BsFillCartPlusFill   } from 'react-icons/bs';
-import './cartWidgetStyle.css'
+import { GlobalContext } from '../context/cartContext';
+import './cartWidgetStyle.css';
+
 
 const CartWidget = () => {
+  const {count, cart} = useContext(GlobalContext);
 
+  const showCart = () => {
+  
+      cart.map(moto => (
+        <div className='moto' key={moto.id}>
+                    <img src={moto.image} alt={moto.name} />
+                    <h3>{moto.name}</h3>
+                    <button>Eliminar</button>
+        </div>
+      ))
+  };
     
   return (
-    <button className='btnCart'>
+    <button onClick={showCart} className='btnCart'>
         <BsFillCartPlusFill />
-        <p>{/* count */}</p>
+        <p>{count}</p>
     </button>
   )
 }

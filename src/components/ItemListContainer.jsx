@@ -4,6 +4,7 @@ import Catalogo from './catalogo/Catalogo'
 import Home from './home/Home'
 import NavbarHonda from './navbar/NavbarHonda'
 import axios from 'axios';
+import Footer from './footer/Footer'
 
 const ItemListContainer = () => {
 
@@ -18,8 +19,8 @@ const ItemListContainer = () => {
         <Routes>
             <Route path='/' element={ <Home /> } />
             <Route path='/catalogo' element={ <Catalogo motos={motos} /> } />
-
         </Routes>
+        <Footer />
     </>
   )
 }

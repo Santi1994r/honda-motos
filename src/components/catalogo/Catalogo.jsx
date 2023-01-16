@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { GlobalContext } from '../context/cartContext';
 import './catalogo.css'
 
 const Catalogo = ({ motos }) => {
- /*    const [count, setCount] = useState(0)
+    const {count, setCount, cart, setCart} = useContext(GlobalContext);
 
-    const addToCart = () => {
-        setCount(count + 1)
-    }; */
+    const addToCart = (moto) => {
+        setCount(count + 1);
+        setCart([...cart, moto])
+        console.log(cart);
+    };
 
   return (
     <div className='containerMotos'>
@@ -16,7 +19,7 @@ const Catalogo = ({ motos }) => {
                     <img src={moto.image} alt={moto.name} />
                     <h3>{moto.name}</h3>
                     <p>{moto.price}</p>
-                    <button /* onClick={addToCart} */>Ver producto</button>
+                    <button onClick={() => addToCart(moto)}>Ver producto</button>
                 </div>
             ))
         }
