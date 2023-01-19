@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { GlobalContext } from '../context/cartContext';
+import { GlobalContext } from '../context/CartContext';
 import './catalogo.css'
 
 const Catalogo = ({ motos }) => {
@@ -11,6 +11,7 @@ const Catalogo = ({ motos }) => {
         console.log(cart);
     };
 
+    
   return (
     <div className='containerMotos'>
         {

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { BsFillCartPlusFill   } from 'react-icons/bs';
-import { GlobalContext } from '../context/cartContext';
+import { GlobalContext } from '../context/CartContext';
 import './cartWidgetStyle.css';
 
 

@@ -1,4 +1,4 @@
-import { CartContext } from "./components/context/cartContext";
+import { CartContext } from "./components/context/CartContext";
 import ItemListContainer from "./components/ItemListContainer";
 
 
