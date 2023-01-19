@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
-import { BsFillCartPlusFill   } from 'react-icons/bs';
+
 import { GlobalContext } from '../context/CartContext';
+import BtnOffCanvas from '../offCanvas/BtnOffCanvas';
+import OffCanvas from '../offCanvas/OffCanvas';
 import './cartWidgetStyle.css';
 
 
@@ -20,8 +22,7 @@ const CartWidget = () => {
     
   return (
     <button onClick={showCart} className='btnCart'>
-        <BsFillCartPlusFill />
-        <p>{count}</p>
+        <OffCanvas />
     </button>
   )
 }
