@@ -24,7 +24,7 @@ const ItemDetail = ({moto}) => {
         <button onClick={() => addToCart(moto.id)}>Agregar al carrito</button>
       </div>
       <Link to={"/"}>
-        <button>Volver Atras</button>
+        <button>Volver Al Menu</button>
       </Link>
     </div>
   );

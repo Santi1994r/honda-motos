@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { GlobalContext } from "../context/CartContext";
@@ -8,9 +8,9 @@ const OffCanvas = () => {
   const { show, setShow, cart } = useContext(GlobalContext);
   const handleClose = () => setShow(false);
 
-  const deleteBike = (id) => {
+ /*  const deleteBike = (id) => {
     const existInTheCart = cart.find(el => el.id === id);
-  };
+  }; */
 
   return (
     <div>
@@ -26,7 +26,7 @@ const OffCanvas = () => {
               <h3>{el.name}</h3>
               <p>{`Precio: $${el.price}`}</p>
               <p>{`Cantidad: ${el.quantity}`}</p>
-              <button onClick={() => deleteBike(el.id)}>
+              <button /* onClick={() => deleteBike(el.id)} */>
                 Eliminar
               </button>
             </div>

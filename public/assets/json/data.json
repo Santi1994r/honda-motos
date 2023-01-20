@@ -1,28 +1,42 @@
 [
     {
         "id": 1,
-        "name": "yamaha crypton",
+        "name": "Wave 110 s",
         "image": "https://fotos.perfil.com/2020/11/09/las-20-motos-que-mas-se-vendieron-en-la-argentina-en-octubre-1074122.jpg",
         "quantity": 1,
-        "price": 300000,
+        "info":{
+            "general": "",
+            "prestaciones": "",
+            "infoExtra":""
+        },
+        "price": 600000,
         "category": "naked"
 
     },
     {
         "id": 2,
-        "name": "honda tornado",
+        "name": "Tornado 250",
         "image": "https://www.maseramotos.com.ar/new/wp-content/uploads/2021/02/XR250-3.jpg",
         "quantity": 1,
-        "price": 300000,
+        "price": 1700000,
         "category": "enduro"
 
     },
     {
         "id": 3,
-        "name": "honda twister",
+        "name": "Twister 250",
         "image": "https://motoshondaramonsuarez.com.ar/wp-content/uploads/2019/10/Moto-Honda-CB250-Twister.jpg",
         "quantity": 1,
-        "price": 300000,
+        "price": 1500000,
+        "category": "naked"
+
+    },
+    {
+        "id": 4,
+        "name": "Africa Twin 1100",
+        "image": "https://ubikemotos.cl/5058-large_default/honda-africa-twin-crf-1000ld.jpg",
+        "quantity": 1,
+        "price": 5000000,
         "category": "naked"
 
     }

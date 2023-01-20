@@ -14,7 +14,6 @@ const Catalogo = () => {
         <div className="moto" key={moto.id}>
           <img src={moto.image} alt={moto.name} />
           <h3>{moto.name}</h3>
-          <p>{`Precio: $${moto.price}`}</p>
           <Link to={`${moto.name}`}>
             <button>Ver Producto</button>
           </Link>
