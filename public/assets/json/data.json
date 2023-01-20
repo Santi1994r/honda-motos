@@ -4,7 +4,8 @@
         "name": "yamaha crypton",
         "image": "https://fotos.perfil.com/2020/11/09/las-20-motos-que-mas-se-vendieron-en-la-argentina-en-octubre-1074122.jpg",
         "quantity": 1,
-        "price": 300000
+        "price": 300000,
+        "category": "naked"
 
     },
     {
@@ -12,7 +13,8 @@
         "name": "honda tornado",
         "image": "https://www.maseramotos.com.ar/new/wp-content/uploads/2021/02/XR250-3.jpg",
         "quantity": 1,
-        "price": 300000
+        "price": 300000,
+        "category": "enduro"
 
     },
     {
@@ -20,7 +22,8 @@
         "name": "honda twister",
         "image": "https://motoshondaramonsuarez.com.ar/wp-content/uploads/2019/10/Moto-Honda-CB250-Twister.jpg",
         "quantity": 1,
-        "price": 300000
+        "price": 300000,
+        "category": "naked"
 
     }
 ]

@@ -1,16 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { GlobalContext } from "../context/CartContext";
-import "./catalogo.css";
 
-const Catalogo = () => {
-  const {motos } = useContext(GlobalContext);
-
-  
-
+const Category = ({ motosFiltered }) => {
   return (
-    <div className="containerMotos">
-      {motos.map((moto) => (
+    <div>
+      {motosFiltered.map((moto) => (
         <div className="moto" key={moto.id}>
           <img src={moto.image} alt={moto.name} />
           <h3>{moto.name}</h3>
@@ -24,4 +18,4 @@ const Catalogo = () => {
   );
 };
 
-export default Catalogo;
+export default Category;
