@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { GlobalContext } from "../context/CartContext";
 import "./catalogo.css";
 
-const Catalogo = () => {
-  const {motos } = useContext(GlobalContext);
+const Catalogo = ({ getProduct }) => {
+  const { motos } = useContext(GlobalContext);
 
   
 
@@ -15,7 +15,7 @@ const Catalogo = () => {
           <img src={moto.image} alt={moto.name} />
           <h3>{moto.name}</h3>
           <Link to={`${moto.name}`}>
-            <button>Ver Producto</button>
+            <button onClick={() => getProduct(moto.id)}>Ver Producto</button>
           </Link>
         </div>
       ))}

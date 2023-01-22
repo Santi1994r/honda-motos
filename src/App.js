@@ -1,8 +1,5 @@
-import { CartContext } from "./components/context/CartContext";
+import { CartContext, GlobalContext } from "./components/context/CartContext";
 import ItemListContainer from "./components/ItemListContainer";
-
-
-
 
 function App() {
   return (

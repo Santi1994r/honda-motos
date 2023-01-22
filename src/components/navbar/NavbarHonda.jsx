@@ -25,7 +25,7 @@ const NavbarHonda = () => {
               </NavLink>
               <NavDropdown.Divider />
               <NavLink className="navlink" to="/categoria/enduro">
-                Enduro
+                Off Road
               </NavLink>
               <NavDropdown.Divider />
               <NavLink className="navlink" to="/categoria/naked">
