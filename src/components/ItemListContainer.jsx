@@ -8,8 +8,9 @@ import Footer from "./footer/Footer";
 import { GlobalContext } from "./context/CartContext";
 import ItemDetailContainer from "./itemDetailContainer/ItemDetailContainer";
 import Category from "./category/Category";
-import { collection, doc, getDoc, getDocs } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDoc, getDocs, updateDoc } from "firebase/firestore";
 import { db } from "../db/firebase-config";
+import FormCreate from "./form/FormCreate";
 
 const ItemListContainer = () => {
   const { setMotos, motos } = useContext(GlobalContext);
@@ -38,8 +39,19 @@ const ItemListContainer = () => {
       : console.log("No se Encontraron los documentos");
   };
 
-  const deleteProduct = () => {
-    
+  
+  const deleteProduct = async (id) => {
+    const docRef = doc(db, "productos", id);
+    await deleteDoc(docRef);
+    const data = await getDocs(productCollectionRef);
+    setMotos(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  };
+  
+  const updateProduct = async (id) => {
+    const docRef = doc(db, "productos", id);
+    await updateDoc(docRef, {price: 200000});
+    const data = await getDocs(productCollectionRef);
+    setMotos(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 
   useEffect(() => {
@@ -51,28 +63,15 @@ const ItemListContainer = () => {
       <NavbarHonda />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/catalogo"
-          element={<Catalogo getProduct={getProduct} />}
+        <Route path="/catalogo" element={<Catalogo getProduct={getProduct} deleteProduct={deleteProduct} updateProduct={updateProduct} />}
         />
         <Route path="/catalogo/:name" element={<ItemDetailContainer />} />
-        <Route
-          path="/categoria/enduro"
-          element={<Category motosFiltered={motosEnduro} />}
-        />
-        <Route
-          path="/categoria/naked"
-          element={<Category motosFiltered={motosNaked} />}
-        />
+        <Route path="/categoria/enduro" element={<Category motosFiltered={motosEnduro} />} />
+        <Route path="/categoria/naked" element={<Category motosFiltered={motosNaked} />} />
+        <Route path="/categoria/naked/:name" element={<ItemDetailContainer />} />
+        <Route path="/categoria/enduro/:name" element={<ItemDetailContainer />} />
+        <Route path="/crear" element={<FormCreate />} />
 
-        <Route
-          path="/categoria/naked/:name"
-          element={<ItemDetailContainer />}
-        />
-        <Route
-          path="/categoria/enduro/:name"
-          element={<ItemDetailContainer />}
-        />
       </Routes>
       <Footer />
     </>

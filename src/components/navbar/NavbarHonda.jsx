@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import CartWidget from "../cartWidget/CartWidget";
 import './navbarStyle.css'
 
@@ -25,7 +25,7 @@ const NavbarHonda = () => {
               </NavLink>
               <NavDropdown.Divider />
               <NavLink className="navlink" to="/categoria/enduro">
-                Off Road
+                Enduro
               </NavLink>
               <NavDropdown.Divider />
               <NavLink className="navlink" to="/categoria/naked">
@@ -64,6 +64,9 @@ const NavbarHonda = () => {
                   src="../assets/images/twitter.png"
                   alt="twitter"
                 />
+                <Link to={"/crear"}>
+                  <Button className="mx-2" variant="success">Subir producto</Button>
+                </Link>
                 <CartWidget />
               </div>
             </Nav>

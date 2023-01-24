@@ -5,9 +5,9 @@ import { GlobalContext } from "../context/CartContext";
 const ItemDetail = ({moto}) => {
     const { count, setCount, motos, cart, setCart } = useContext(GlobalContext);
 
-    const addToCart = (moto) => {
+    const addToCart = (id) => {
         setCount(count + 1);
-        const chooseMotorBike = motos.find((bike) => bike.id === moto);
+        const chooseMotorBike = motos.find((bike) => bike.id === id);
         let existInTheCart = cart.find((item) => item.id === chooseMotorBike.id);
         existInTheCart
           ? setCart([...cart, chooseMotorBike.quantity++])
