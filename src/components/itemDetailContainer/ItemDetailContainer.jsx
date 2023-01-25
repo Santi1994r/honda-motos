@@ -4,7 +4,7 @@ import { GlobalContext } from '../context/CartContext';
 import ItemDetail from './ItemDetail';
 
 const ItemDetailContainer = () => {
-    const {name} = useParams();
+    const { name } = useParams();
     const { motos } = useContext(GlobalContext);
     const [moto, setMoto] = useState({});
     const getMotosByName = () => {
@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         setMoto(getMotosByName);
     }, [name])
-    console.log(moto);
+
   return (
     <div>
         <ItemDetail moto={moto} />

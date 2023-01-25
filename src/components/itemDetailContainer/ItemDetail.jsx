@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../context/CartContext";
+import './itemDetail.css'
 
 const ItemDetail = ({moto}) => {
     const { count, setCount, motos, cart, setCart } = useContext(GlobalContext);
@@ -16,15 +17,18 @@ const ItemDetail = ({moto}) => {
       };
 
   return (
-    <div>
-      <div className="moto" key={moto.id}>
+    <div className="containerDetail">
+      <div className="motoDetail" key={moto.id}>
         <img src={moto.image} alt={moto.name} />
         <h3>{moto.name}</h3>
-        <p>{`Precio: $${moto.price}`}</p>
-        <button onClick={() => addToCart(moto.id)}>Agregar al carrito</button>
+        <p>{`Precio: $${moto.price}`}</p> 
+        <p>{`Descripción General: ${moto.info.general}`}</p>
+        <p>{`Información Extra: ${moto.info.infoExtra}`}</p> 
+        <p>{`Prestaciones: ${moto.info.prestaciones}`}</p> 
+        <button className="btnAddProduct" onClick={() => addToCart(moto.id)}>Agregar al carrito</button>
       </div>
       <Link to={"/"}>
-        <button>Volver Al Menu</button>
+        <button className="btnBackToMenu">Volver Al Menu</button>
       </Link>
     </div>
   );
