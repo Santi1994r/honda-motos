@@ -29,15 +29,25 @@ const ItemListContainer = () => {
     const data = await getDocs(productCollectionRef);
     setMotos(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
-
-  const getProduct = async (id) => {
+/* Prueba */
+ /*  const getProduct = async (id) => {
     const docRef = doc(db, "productos", id);
-    console.log(docRef);
     const docSnap = await getDoc(docRef);
     docSnap.exists()
       ? docSnap.data()
       : console.log("No se Encontraron los documentos");
+  }; */
+
+  const getProduct = async (id) => {
+    const docRef = doc(db, "productos", id);
+    const docSnap = await getDoc(docRef); 
+    if (docSnap.exists()) {
+       return docSnap.data()
+    } else {
+      console.log("No se Encontraron los documentos");
+    } 
   };
+     
 
   
   const deleteProduct = async (id) => {
@@ -65,11 +75,11 @@ const ItemListContainer = () => {
         <Route path="/" element={<Home />} />
         <Route path="/catalogo" element={<Catalogo getProduct={getProduct} deleteProduct={deleteProduct} updateProduct={updateProduct} />}
         />
-        <Route path="/catalogo/:name" element={<ItemDetailContainer />} />
+        <Route path="/catalogo/:id" element={<ItemDetailContainer getProduct={getProduct} />} />
         <Route path="/categoria/enduro" element={<Category motosFiltered={motosEnduro} />} />
         <Route path="/categoria/naked" element={<Category motosFiltered={motosNaked} />} />
-        <Route path="/categoria/naked/:name" element={<ItemDetailContainer />} />
-        <Route path="/categoria/enduro/:name" element={<ItemDetailContainer />} />
+        <Route path="/categoria/naked/:id" element={<ItemDetailContainer />} />
+        <Route path="/categoria/enduro/:id" element={<ItemDetailContainer />} />
         <Route path="/crear" element={<FormCreate />} />
 
       </Routes>

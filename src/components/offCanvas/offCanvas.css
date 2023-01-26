@@ -1,0 +1,42 @@
+.containerMotosCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.motoFromCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid red;
+    width: 90%;
+    margin-bottom: 1rem;
+    border-radius: .1rem;
+}
+
+.motoFromCart img {
+    width: 100%;
+}
+
+.motoFromCart button {
+    padding: .5rem;
+    border: 1px solid #F1948A;
+    border-radius: .5rem;
+    background-color: #B03A2E;
+    color: #fff;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.motoFromCart button:hover {
+    padding: .5rem;
+    border: 1px solid #B03A2E;
+    border-radius: .5rem;
+    background-color: #E74C3C;
+    color: #fff;
+    box-shadow: 0 2px 3px #F1948A;
+}
+
+
+

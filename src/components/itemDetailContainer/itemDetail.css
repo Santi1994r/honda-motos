@@ -10,6 +10,10 @@
     align-items: center;
 }
 
+.motoDetail img {
+    width: 65%;
+}
+
 .btnAddProduct {
     padding: .5rem;
     border: 1px solid #F1948A;

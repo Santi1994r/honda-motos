@@ -3,18 +3,20 @@ import { useParams } from 'react-router-dom'
 import { GlobalContext } from '../context/CartContext';
 import ItemDetail from './ItemDetail';
 
-const ItemDetailContainer = () => {
-    const { name } = useParams();
+const ItemDetailContainer = ({ getProduct }) => {
+    const { id } = useParams();
     const { motos } = useContext(GlobalContext);
-    const [moto, setMoto] = useState({});
-    const getMotosByName = () => {
+    const [moto, setMoto] = useState([]);
+    /* const getMotosByName = () => {
         const motoObtained = motos.find(moto => moto.name === name);
-        return motoObtained;
+        setMoto(motoObtained);
     };
-
+ */
     useEffect(() => {
-        setMoto(getMotosByName);
-    }, [name])
+        /* getMotosByName(); */
+        console.log(id);
+        getProduct(id).then(resp => setMoto(resp))
+    }, [id]);
 
   return (
     <div>

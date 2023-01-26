@@ -10,8 +10,8 @@ const BtnOffCanvas = () => {
   return (
     <div>
         <Button variant="primary" onClick={handleShow} className="me-2">
-        <BsFillCartPlusFill />
-        {count}
+          <BsFillCartPlusFill />
+          {count}
         </Button>
     </div>
   )

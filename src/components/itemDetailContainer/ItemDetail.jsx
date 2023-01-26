@@ -13,8 +13,12 @@ const ItemDetail = ({moto}) => {
         existInTheCart
           ? setCart([...cart, chooseMotorBike.quantity++])
           : setCart([...cart, chooseMotorBike]);
-        console.log(cart);
       };
+      console.log(moto.info);
+  /*     const getProperties = async (obj) => {
+          const response = (await obj.info.general)
+          return response
+      }; */
 
   return (
     <div className="containerDetail">
@@ -22,13 +26,13 @@ const ItemDetail = ({moto}) => {
         <img src={moto.image} alt={moto.name} />
         <h3>{moto.name}</h3>
         <p>{`Precio: $${moto.price}`}</p> 
-        <p>{`Descripción General: ${moto.info.general}`}</p>
-        <p>{`Información Extra: ${moto.info.infoExtra}`}</p> 
-        <p>{`Prestaciones: ${moto.info.prestaciones}`}</p> 
+        {/* <p>{`Descripción General: ${moto.info.general}`}</p> */}
+        {/* <p>{`Información Extra: ${moto.info.infoExtra}`}</p> 
+        <p>{`Prestaciones: ${moto.info.prestaciones}`}</p>  */}
         <button className="btnAddProduct" onClick={() => addToCart(moto.id)}>Agregar al carrito</button>
       </div>
-      <Link to={"/"}>
-        <button className="btnBackToMenu">Volver Al Menu</button>
+      <Link to={"/catalogo"}>
+        <button className="btnBackToMenu">Volver Al Catálogo</button>
       </Link>
     </div>
   );

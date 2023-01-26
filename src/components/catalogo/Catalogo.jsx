@@ -14,10 +14,8 @@ const Catalogo = ({ getProduct, updateProduct, deleteProduct }) => {
           <div className="moto" key={moto.id}>
             <img src={moto.image} alt={moto.name} />
             <h3>{moto.name}</h3>
-            <h6>{moto.price}</h6>
-
-            <Link to={`${moto.name}`}>
-              <button onClick={() => getProduct(moto.id)}>Ver</button>
+            <Link to={`${moto.id}`}>
+              <button /* onClick={() => getProduct(moto.id)} */>Ver</button>
             </Link>
             <Button onClick={() => deleteProduct(moto.id)} className="mx-2" variant="danger">Eliminar</Button>
             <Button onClick={() => updateProduct(moto.id)} className="mx-2" variant="warning">Actualizar</Button>
